@@ -174,6 +174,14 @@ public class PlayerView extends Tab implements ViewObserver {
                         finishButton.setDisable(true);
                         executeButton.setDisable(false);
                         stepButton.setDisable(false);
+
+                        for (int i = 0; i < programCardViews.length; i++) {
+                            if (player.board.getStep() == i) {
+                                programCardViews[i].setBackground(CardFieldView.BG_ACTIVE);
+                            } else {
+                                programCardViews[i].setBackground(CardFieldView.BG_DEFAULT);
+                            }
+                        }
                         break;
 
                     default:
@@ -186,13 +194,7 @@ public class PlayerView extends Tab implements ViewObserver {
                 // TODO make sure that the field with the current card is high-lighted
                 //      with a different colour background when it is active
 
-                for (int i = 0; i < programCardViews.length; i++) {
-                    if (player.board.getStep() == i) {
-                        programCardViews[i].setBackground(CardFieldView.BG_ACTIVE);
-                    } else {
-                        programCardViews[i].setBackground(CardFieldView.BG_DEFAULT);
-                    }
-                }
+
 
             } else {
                 if (!programPane.getChildren().contains(playerInteractionPanel)) {
