@@ -2,7 +2,7 @@
 <project version="4">
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/out/production/doc" />
-    <option name="OTHER_OPTIONS" value="-overview  C:\Users\ekki\IdeaProjects\PiSD-f20\project.0.3.1\src\dk\dtu\compute\se\pisd\overview.html" />
+    <option name="OTHER_OPTIONS" value="-overview  C:\Users\haida\IdeaProjects\project.0.3.1\src\dk\dtu\compute\se\pisd\overview.html" />
   </component>
   <component name="MavenBuildProjectComponent">
     <option name="mavenExecutable" value="" />

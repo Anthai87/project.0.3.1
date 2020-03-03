@@ -35,6 +35,8 @@ import javafx.scene.control.Tab;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
+import java.util.List;
+
 /**
  * ...
  *
@@ -188,27 +190,21 @@ public class PlayerView extends Tab implements ViewObserver {
                     programPane.getChildren().remove(buttonPanel);
                     programPane.add(playerInteractionPanel, Player.NO_REGISTERS, 0);
                 }
+
                 playerInteractionPanel.getChildren().clear();
-
                 if (player.board.getCurrentPlayer() == player) {
-
-
                     CommandCardField field = player.getProgramField(player.board.getStep());
                    if (field != null) {
                         CommandCard card = field.getCard();
                         if (card != null) {
                             Command command = card.command;
                             if (command.isInteractive()) {
-                               /* for (Command optionsButton: command.getOptions()){
-                                    optionsButton.setOnAction (e ->
-                                            gameController.executePlayersOption(player,commandOption);
-                                    optionButton.setBackgound(CardFieldView.BG_ACTIVE);
-                                    playerInteractionPanel.getChildren().add(optionButton);*/
-
-                                // TODO make sure that there are buttons for the user to chose
-                                //      the different options of the command card; and a click
-                                //      on the respective button should call the GameController to
-                                //      execute the respective command option.
+                                List<Command> commands = command.getOptions();
+                                for (Command option: commands) {
+                                    Button button = new Button(option.displayName);
+                                    playerInteractionPanel.getChildren().add(button);
+                                    button.setOnAction( e-> {gameController.executePlayersOption(player,option);});
+                                }
                             }
                         }
                     }

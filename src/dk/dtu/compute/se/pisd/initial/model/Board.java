@@ -43,7 +43,7 @@ public class Board extends Subject {
     private Space[][] spaces;
 
     private List<Player> players = new ArrayList<Player>(); // vi ved ikke på forhånd hvor mange spiller der skal spille, hvorfor er det
-    // oplagt er at bruge list. Play er en type af klassen Play.
+    // oplagt at bruge list. Play er en type af klassen Play.
     private Player current;
 
     private Phase phase = INITIALISATION;

@@ -148,7 +148,8 @@ public class CardFieldView extends GridPane implements ViewObserver {
         if (subject == field && subject != null) {
             CommandCard card = field.getCard();
             if (card != null) {
-                // TODO make sure that the card (its label) is shown
+                field.getCard().equals(null);
+                //  TODO make sure that the card (its label) is shown
                 //      only when it is visible
                 label.setText(card.getName());
             } else {
